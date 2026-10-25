@@ -21,11 +21,21 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
 
   return (
     <header
-      className="sticky top-6 md:top-8 z-50 w-full flex justify-center px-4 pointer-events-none"
+      className="sticky z-50 w-full flex justify-center px-4 pointer-events-none"
       style={{ top: '24px' }}
     >
-      {/* Nur der Kasten um den Inhalt (kein durchgehender Balken über den Bildschirm) */}
-      <div className="pointer-events-auto header-box flex items-center justify-between md:justify-center gap-6 md:gap-8 px-6 py-2.5">
+      {/* Schwebender Kasten (Floating Island Box) um den Inhalt */}
+      <div
+        className="pointer-events-auto header-box flex items-center justify-between md:justify-center gap-6 md:gap-8 px-6 py-2.5 transition-all duration-300"
+        style={{
+          backgroundColor: 'rgba(22, 27, 34, 0.95)',
+          border: '1px solid rgba(0, 191, 255, 0.35)',
+          borderRadius: '16px',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.15)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+        }}
+      >
         {/* Brand / Logo */}
         <a
           href="#top"
