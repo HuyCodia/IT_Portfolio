@@ -51,6 +51,21 @@ body {
     box-shadow: 0 0 20px rgba(0, 191, 255, 0.25);
     border-color: var(--primary-color) !important;
 }
+
+/* Floating Header Island Box ("Kasten") */
+.header-box {
+    border: 1px solid var(--border-color);
+    background-color: rgba(22, 27, 34, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 191, 255, 0.08);
+    border-radius: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.header-box:hover {
+    border-color: rgba(0, 191, 255, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.18);
+}
 .text-glow {
     text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
 }

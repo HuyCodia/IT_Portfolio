@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
       style={{ top: '24px' }}
     >
       {/* Nur der Kasten um den Inhalt (kein durchgehender Balken über den Bildschirm) */}
-      <div className="pointer-events-auto flex items-center justify-between md:justify-center gap-6 md:gap-8 rounded-xl border border-[var(--border-color)] bg-[var(--surface-color)]/90 px-6 py-2.5 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.5)] glow-border">
+      <div className="pointer-events-auto header-box flex items-center justify-between md:justify-center gap-6 md:gap-8 px-6 py-2.5">
         {/* Brand / Logo */}
         <a
           href="#top"
