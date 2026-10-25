@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0B0F14" />
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#293241" stroke-width="2" />
+  <!-- Letter H -->
+  <path d="M18 16 V48 M34 16 V48 M18 32 H34" stroke="#00BFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Underscore Cursor -->
+  <line x1="40" y1="48" x2="48" y2="48" stroke="#00E5C0" stroke-width="5" stroke-linecap="round" />
+</svg>

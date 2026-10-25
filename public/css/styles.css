@@ -1,0 +1,206 @@
+/* Explain: Theme design tokens (colors, fonts) — single source of truth. */
+:root {
+    /* Futuristisches Dark-Mode Design */
+    --primary-color: #00BFFF;       /* Neonblau */
+    --primary-hover: #0099CC;
+    --secondary-color: #8B5CF6;     /* Elektrisches Violett */
+    --accent-color: #00E5C0;        /* Türkis */
+    
+    --background-color: #0B0F14;    /* Sehr dunkles Anthrazit für den Hintergrund */
+    --surface-color: #161B22;       /* Dunkles Graphit für Karten und Boxen */
+    
+    --text-color: #F5F7FA;          /* Klares Weiß für Überschriften und Fließtext */
+    --text-muted: #A7B0BE;          /* Dezentes Hellgrau für sekundären Text */
+    --border-color: #293241;        /* Dunkles Grau für Rahmen und Trennlinien */
+    
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+/* Explain: Base reset, typography defaults, visual effects, and responsive image styling. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(41, 50, 65, 0.4) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(41, 50, 65, 0.4) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+}
+
+.glow-border {
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.05);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glow-border:hover {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.25);
+    border-color: var(--primary-color) !important;
+}
+.text-glow {
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Projektbilder: Graustufen-Effekt nur auf Desktop (breiter Viewport + Mauszeiger).
+   Im mobilen Layout (schmaler Viewport) behalten die Bilder immer ihre volle Farbe. */
+/* Farb-Overlay über den Projektbildern: nur auf Geräten mit Mauszeiger (Desktop).
+   Im mobilen Modus gibt es keinen Hover, daher wird das Overlay dort gar nicht angezeigt. */
+.project-overlay {
+    display: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+    .project-overlay {
+        display: block;
+    }
+    .project-media {
+        filter: grayscale(1) contrast(1.25);
+    }
+    .group:hover .project-media {
+        filter: grayscale(0) contrast(1);
+    }
+}
+/* Explain: Styles for scroll-spy navigation and button states. */
+/* Scroll-Spy: hebt den aktuell sichtbaren Abschnitt in der Kopfzeilen-Navigation hervor */
+
+header a[href="#projects"],
+header a[href="#skills"],
+header a[href="#about"],
+header a[href="#contact"] {
+    position: relative;
+}
+
+header a[href="#projects"]::after,
+header a[href="#skills"]::after,
+header a[href="#about"]::after,
+header a[href="#contact"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+header a[href="#projects"].is-active,
+header a[href="#skills"].is-active,
+header a[href="#about"].is-active {
+    color: var(--primary-color) !important;
+}
+
+header a[href="#projects"].is-active::after,
+header a[href="#skills"].is-active::after,
+header a[href="#about"].is-active::after,
+header a[href="#contact"].is-active::after {
+    transform: scaleX(1);
+}
+
+/* "Kontakt": im aktiven Zustand gefüllt statt unterstrichen */
+header a[href="#contact"]::after {
+    display: none;
+}
+
+/* "Kontakt": die blaue Füllung wächst beim Scrollen zur Kontaktsektion
+   von der Mitte nach außen – wie die Markierung der übrigen Links. */
+header .contact-cta {
+    background-image: linear-gradient(var(--primary-color), var(--primary-color));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0% 100%;
+    color: var(--primary-color);
+    transition: background-size 0.35s ease, color 0.35s ease;
+}
+
+/* Desktop-Button behält im Ruhezustand den dunklen Grundton */
+header .btn.contact-cta {
+    background-color: var(--background-color);
+}
+
+header .contact-cta:hover,
+header .contact-cta.is-active {
+    background-size: 100% 100%;
+    color: #0B0F14;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header a[href="#projects"]::after,
+    header a[href="#skills"]::after,
+    header a[href="#about"]::after,
+    header a[href="#contact"]::after {
+        transition: none;
+    }
+}
+
+/* App Layout & Full-width overrides */
+#root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Ensure font variables work everywhere */
+.font-heading {
+    font-family: var(--font-heading) !important;
+}
+.font-body {
+    font-family: var(--font-body) !important;
+}
+.font-mono {
+    font-family: var(--font-mono) !important;
+}
+
+/* Positioning utilities */
+.top-4 { top: 1rem !important; }
+.top-6 { top: 1.5rem !important; }
+.top-8 { top: 2rem !important; }
+
+/* Flex alignment & spacing utilities */
+.justify-end {
+    justify-content: flex-end !important;
+}
+
+@media (min-width: 768px) {
+    .md\:justify-center {
+        justify-content: center !important;
+    }
+    .md\:justify-end {
+        justify-content: flex-end !important;
+    }
+    .md\:ml-auto {
+        margin-left: auto !important;
+    }
+}
+
+
