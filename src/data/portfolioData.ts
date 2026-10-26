@@ -1,7 +1,7 @@
 import profileImg from '../assets/profile.jpg';
 import projectTixelImg from '../assets/project-tixel.png';
 import projectBattleshipImg from '../assets/project-battleship.png';
-import projectEcommerceImg from '../assets/project-ecommerce.jpg';
+import projectVideoPortfolioImg from '../assets/project-videoportfolio.png';
 import type { Project, SkillCategory, AboutItem, NavLink } from '../types';
 
 export const personalInfo = {
@@ -39,7 +39,6 @@ export const projects: Project[] = [
     image: projectTixelImg,
     placeholderText: 'TIXEL Control Center Screenshot',
     sourceUrl: 'https://github.com/HuyCodia',
-    demoUrl: 'https://example.com',
   },
   {
     id: 'battleship-game',
@@ -52,14 +51,16 @@ export const projects: Project[] = [
     sourceUrl: 'https://github.com/HuyCodia',
   },
   {
-    id: 'ecommerce-rest-api',
-    title: 'E-Commerce REST API',
+    id: 'video-portfolio',
+    title: 'Huy Dang | Video Portfolio',
     description:
-      'Entwicklung einer skalierbaren Backend-Architektur für einen Online-Shop mit JWT-Authentifizierung und Zahlungsanbindung.',
-    tags: ['Node.js', 'Express', 'MongoDB', 'Docker'],
-    image: projectEcommerceImg,
-    placeholderText: 'E-Commerce REST API / Code',
-    sourceUrl: 'https://github.com',
+      'Eine moderne, performante Portfolio-Website für Video-Editing, Football Edits, KI-Videocreation und cineastische Visuals. Entwickelt mit React 19, Tailwind CSS, interaktiver Projektgalerie und responsivem Layout.',
+    tags: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    image: projectVideoPortfolioImg,
+    placeholderText: 'Huy Dang | Video Portfolio Screenshot',
+    sourceUrl: 'https://github.com/HuyCodia/Videograph_Portfolio',
+    demoUrl: 'https://huydang-video.vercel.app/',
+    demoLabel: 'website',
   },
 ];
 

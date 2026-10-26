@@ -103,7 +103,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               className="text-sm font-semibold text-[var(--text-color)] hover:text-[var(--accent-color)] transition-colors flex items-center gap-1.5"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              <i className="fa-solid fa-arrow-up-right-from-square" /> live_demo
+              <i className="fa-solid fa-arrow-up-right-from-square" /> {project.demoLabel || 'website'}
             </a>
           )}
         </div>

@@ -7,6 +7,7 @@ export interface Project {
   placeholderText?: string;
   sourceUrl: string;
   demoUrl?: string;
+  demoLabel?: string;
 }
 
 export interface SkillCategory {
