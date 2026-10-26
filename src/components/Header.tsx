@@ -7,6 +7,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   // Close mobile menu when clicking outside or pressing Escape
   useEffect(() => {
@@ -19,10 +20,58 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Smart Hide/Show on scroll: Beim Runterscrollen nach oben verschwinden, beim Hochscrollen wieder einblenden
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+
+      // Ganz oben auf der Seite immer sichtbar
+      if (scrollY < 50) {
+        setIsVisible(true);
+        lastScrollY = scrollY > 0 ? scrollY : 0;
+        ticking = false;
+        return;
+      }
+
+      const diff = scrollY - lastScrollY;
+      // Schwellenwert von 8px verhindert Flackern bei minimalem Zittern oder Touchpad-Bouncing
+      if (Math.abs(diff) > 8) {
+        if (diff > 0 && !mobileMenuOpen) {
+          // Runterscrollen -> nach oben hin ausblenden
+          setIsVisible(false);
+        } else if (diff < 0) {
+          // Hochscrollen -> wieder sanft nach unten gleiten
+          setIsVisible(true);
+        }
+        lastScrollY = scrollY;
+      }
+
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDirection);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className="sticky z-50 w-full flex justify-center px-4 pointer-events-none"
-      style={{ top: '24px' }}
+      style={{
+        top: '24px',
+        transform: isVisible ? 'translateY(0)' : 'translateY(calc(-100% - 32px))',
+        opacity: isVisible ? 1 : 0,
+        transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease',
+      }}
     >
       {/* Schwebender Kasten (Floating Island Box) um den Inhalt */}
       <div
