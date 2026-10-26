@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         style={{
           backgroundColor: 'rgba(22, 27, 34, 0.95)',
           border: '1px solid rgba(0, 191, 255, 0.35)',
-          borderRadius: '16px',
+          borderRadius: '4px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.15)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
