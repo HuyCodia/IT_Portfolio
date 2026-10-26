@@ -40,6 +40,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <figure className="aspect-video w-full border-b border-[var(--border-color)] relative">
         <div className="project-overlay absolute inset-0 bg-[var(--primary-color)]/20 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0 pointer-events-none" />
 
+        {project.year && (
+          <div
+            className="absolute top-3 right-3 z-20 px-2.5 py-1 rounded text-xs font-mono font-semibold text-[var(--text-color)] bg-[#161B22]/90 border border-[var(--border-color)] backdrop-blur-md shadow-md flex items-center gap-1.5 pointer-events-none"
+            style={{ borderRadius: '4px' }}
+          >
+            <i className="fa-regular fa-calendar text-[var(--primary-color)] text-[11px]" />
+            <span>{project.year}</span>
+          </div>
+        )}
+
         {project.image && !imgError ? (
           <img
             src={project.image}

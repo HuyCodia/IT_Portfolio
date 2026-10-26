@@ -8,6 +8,7 @@ export interface Project {
   sourceUrl?: string;
   demoUrl?: string;
   demoLabel?: string;
+  year?: string;
 }
 
 export interface SkillCategory {
