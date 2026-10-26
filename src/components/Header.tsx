@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         top: '24px',
         transform: isVisible ? 'translateY(0)' : 'translateY(calc(-100% - 32px))',
         opacity: isVisible ? 1 : 0,
-        transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease',
+        transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease-in-out',
       }}
     >
       {/* Schwebender Kasten (Floating Island Box) um den Inhalt */}
