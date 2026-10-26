@@ -86,15 +86,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Action Links */}
         <div className="card-actions justify-start gap-4 mt-auto border-t border-[var(--border-color)] pt-4">
-          <a
-            href={project.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors flex items-center gap-1.5"
-            style={{ fontFamily: 'var(--font-mono)' }}
-          >
-            <i className="fa-brands fa-github" /> source
-          </a>
+          {project.sourceUrl ? (
+            <a
+              href={project.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors flex items-center gap-1.5"
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
+              <i className="fa-brands fa-github" /> source
+            </a>
+          ) : (
+            <span
+              className="text-sm font-semibold text-[var(--text-muted)] opacity-40 cursor-not-allowed flex items-center gap-1.5 select-none"
+              style={{ fontFamily: 'var(--font-mono)' }}
+              title="Quellcode ist für dieses Projekt nicht öffentlich verfügbar"
+            >
+              <i className="fa-brands fa-github opacity-60" /> source
+            </span>
+          )}
           {project.demoUrl && (
             <a
               href={project.demoUrl}

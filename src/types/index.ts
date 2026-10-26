@@ -5,7 +5,7 @@ export interface Project {
   tags: string[];
   image: string;
   placeholderText?: string;
-  sourceUrl: string;
+  sourceUrl?: string;
   demoUrl?: string;
   demoLabel?: string;
 }
