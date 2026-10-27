@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     >
       {/* Schwebender Kasten (Floating Island Box) um den Inhalt */}
       <div
-        className="pointer-events-auto header-box flex items-center justify-between md:justify-center gap-6 md:gap-8 px-6 py-2.5 transition-all duration-300"
+        className="pointer-events-auto header-box flex items-center justify-between md:justify-center gap-6 md:gap-8 px-6 py-2.5"
         style={{
           backgroundColor: 'rgba(22, 27, 34, 0.95)',
           border: '1px solid rgba(0, 191, 255, 0.35)',
