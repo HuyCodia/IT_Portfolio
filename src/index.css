@@ -20,3 +20,13 @@
   border-color: rgba(0, 191, 255, 0.65) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 191, 255, 0.3) !important;
 }
+
+/* Project Year Badge / Text */
+.project-year-badge {
+  z-index: 30 !important;
+}
+
+.slashed-zero {
+  font-variant-numeric: slashed-zero;
+  font-feature-settings: 'zero' 1, 'cv19' 1;
+}

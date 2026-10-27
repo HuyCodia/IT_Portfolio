@@ -40,7 +40,7 @@ export const projects: Project[] = [
     placeholderText: "TIXEL Control Center Screenshot",
     demoUrl: "https://tixeltec.com/ps_tixstreammft_de.html",
     demoLabel: "website",
-    year: "2024",
+    year: "2023",
   },
   {
     id: "battleship-game",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     image: projectBattleshipImg,
     placeholderText: "Battleship Game GUI Screenshot",
     sourceUrl: "https://github.com/HuyCodia",
-    year: "2023",
+    year: "2021",
   },
   {
     id: "video-portfolio",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     sourceUrl: "https://github.com/HuyCodia/Videograph_Portfolio",
     demoUrl: "https://huydang-video.vercel.app/",
     demoLabel: "website",
-    year: "2025",
+    year: "2026",
   },
 ];
 
