@@ -50,15 +50,15 @@ export const projects: Project[] = [
     tags: ["Java", "JavaFX", "Scene Builder"],
     image: projectBattleshipImg,
     placeholderText: "Battleship Game GUI Screenshot",
-    sourceUrl: "https://github.com/HuyCodia",
+    sourceUrl: "https://github.com/HuyCodia/Battleships.git",
     year: "2021",
   },
   {
     id: "video-portfolio",
-    title: "Huy Dang | Video Portfolio",
+    title: "Video Portfolio Website",
     description:
       "Eine moderne, performante Portfolio-Website für Video-Editing, Football Edits, KI-Videocreation und cinemastische Visuals. Entwickelt mit React, Tailwind CSS, interaktiver Projektgalerie und responsivem Layout.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Antigravity"],
     image: projectVideoPortfolioImg,
     placeholderText: "Huy Dang | Video Portfolio Screenshot",
     sourceUrl: "https://github.com/HuyCodia/Videograph_Portfolio",
@@ -97,7 +97,13 @@ export const skillCategories: SkillCategory[] = [
     id: "tools",
     title: "Tools & Methoden",
     icon: "fa-solid fa-screwdriver-wrench",
-    skills: ["Git & GitHub", "Agile / Scrum", "Linux / Bash"],
+    skills: [
+      "Git & GitHub",
+      "Agile / Scrum",
+      "Linux / Bash",
+      "Antigravity",
+      "VS Code",
+    ],
   },
 ];
 
