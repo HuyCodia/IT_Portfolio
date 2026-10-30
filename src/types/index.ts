@@ -9,6 +9,7 @@ export interface Project {
   demoUrl?: string;
   demoLabel?: string;
   year?: string;
+  status?: 'Completed' | 'In Progress';
 }
 
 export interface SkillCategory {

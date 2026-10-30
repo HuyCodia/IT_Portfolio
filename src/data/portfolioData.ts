@@ -41,6 +41,7 @@ export const projects: Project[] = [
     demoUrl: "https://tixeltec.com/ps_tixstreammft_de.html",
     demoLabel: "website",
     year: "2023",
+    status: "Completed",
   },
   {
     id: "battleship-game",
@@ -52,6 +53,7 @@ export const projects: Project[] = [
     placeholderText: "Battleship Game GUI Screenshot",
     sourceUrl: "https://github.com/HuyCodia/Battleships.git",
     year: "2021",
+    status: "Completed",
   },
   {
     id: "video-portfolio",
@@ -65,6 +67,7 @@ export const projects: Project[] = [
     demoUrl: "https://huydang-video.vercel.app/",
     demoLabel: "website",
     year: "2026",
+    status: "In Progress",
   },
 ];
 

@@ -60,20 +60,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </figure>
 
       <div className="card-body p-6 flex flex-col flex-grow">
-        {/* Jahr direkt unter dem Vorschaubild, rechtsbündig wie im Video-Portfolio */}
-        {project.year && (
-          <div className="flex justify-end mb-2">
-            <span
-              className="font-mono text-xs text-zinc-500"
-              style={{
-                fontFamily:
-                  'Consolas, "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace',
-                fontVariantNumeric: 'slashed-zero',
-                color: '#71717A',
-              }}
-            >
-              {project.year}
-            </span>
+        {/* Status & Jahr direkt unter dem Vorschaubild */}
+        {(project.status || project.year) && (
+          <div className="flex items-center justify-between mb-3">
+            {project.status && (
+              <span
+                className={`project-status-badge ${
+                  project.status === 'In Progress'
+                    ? 'project-status-in-progress'
+                    : 'project-status-completed'
+                }`}
+              >
+                {project.status}
+              </span>
+            )}
+            {project.year && (
+              <span
+                className="font-mono text-xs text-zinc-500 ml-auto"
+                style={{
+                  fontFamily:
+                    'Consolas, "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace',
+                  fontVariantNumeric: 'slashed-zero',
+                  color: '#71717A',
+                }}
+              >
+                {project.year}
+              </span>
+            )}
           </div>
         )}
 
