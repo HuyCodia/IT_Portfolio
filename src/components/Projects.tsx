@@ -67,7 +67,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               className="font-mono text-xs text-zinc-500"
               style={{
                 fontFamily:
-                  'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                  'Consolas, "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace',
+                fontVariantNumeric: 'slashed-zero',
                 color: '#71717A',
               }}
             >
