@@ -63,9 +63,49 @@ body {
 }
 
 /* Project Year Badge on Card Thumbnail */
+/* Project Status Badges */
+.project-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+    font-family: var(--font-body);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.project-status-completed {
+    background-color: #132C1C;
+    color: #4ADE80;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.project-status-in-progress {
+    background-color: #2E1910;
+    color: #FB923C;
+    border: 1px solid rgba(251, 146, 60, 0.2);
+}
+
 .project-year-badge {
     z-index: 30 !important;
 }
+/* Skills Section: Auf Desktop bildschirmfüllend (100vh) und Inhalt komplett zentral zentriert */
+@media (min-width: 1024px) {
+    #skills {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
 .text-glow {
     text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
 }

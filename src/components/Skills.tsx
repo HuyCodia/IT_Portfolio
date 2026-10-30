@@ -4,7 +4,7 @@ import { skillCategories } from '../data/portfolioData';
 export const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-20 bg-[var(--background-color)] border-t border-[var(--border-color)]">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 w-full">
         <div className="mb-12 md:mb-16 text-center">
           <h2
             className="text-3xl md:text-4xl font-bold mb-4 text-[var(--text-color)] text-glow"
