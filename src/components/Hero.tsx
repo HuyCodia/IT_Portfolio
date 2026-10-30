@@ -3,9 +3,10 @@ import { personalInfo } from "../data/portfolioData";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative mx-auto w-full px-6 pt-32 pb-20 lg:pt-40 lg:pb-32 flex flex-col items-center text-center overflow-hidden">
+    <section className="relative mx-auto w-full px-6 py-20 lg:py-32 flex flex-col items-center text-center overflow-hidden">
       {/* Abstract grid background */}
-      <div className="fixed inset-0 z-0 bg-grid-pattern opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-grid-pattern opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[var(--background-color)]/20 via-transparent to-[var(--background-color)] pointer-events-none" />
 
       {/* Status Badge */}
       <div

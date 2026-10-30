@@ -37,13 +37,10 @@ body {
 
 .bg-grid-pattern {
     background-size: 40px 40px;
-    background-position: center top;
     background-image: linear-gradient(to right, rgba(41, 50, 65, 0.4) 1px, transparent 1px),
                       linear-gradient(to bottom, rgba(41, 50, 65, 0.4) 1px, transparent 1px);
-}
-
-section[id] {
-    scroll-margin-top: 100px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 }
 
 .glow-border {
