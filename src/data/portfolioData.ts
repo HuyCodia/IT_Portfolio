@@ -2,6 +2,8 @@ import profileImg from "../assets/profile.jpg";
 import projectTixelImg from "../assets/project-tixel.png";
 import projectBattleshipImg from "../assets/project-battleship.png";
 import projectVideoPortfolioImg from "../assets/project-videoportfolio.png";
+import projectAiContactAutomationImg from "../assets/project-ai-contact-form-automation.png";
+import projectAlgoImg from "../assets/project-algo-visualizer.svg";
 import type { Project, SkillCategory, AboutItem, NavLink } from "../types";
 
 export const personalInfo = {
@@ -66,6 +68,36 @@ export const projects: Project[] = [
     sourceUrl: "https://github.com/HuyCodia/Videograph_Portfolio",
     demoUrl: "https://huydang-video.vercel.app/",
     demoLabel: "website",
+    year: "2026",
+    status: "In Progress",
+  },
+  {
+    id: "ai-contact-form-automation",
+    title: "AI-Powered Contact Management Automation",
+    description:
+      "Eine KI-gestützte Workflow-Automatisierung mit n8n und Google Gemini, die eingehende Kontaktanfragen automatisch analysiert, kategorisiert und priorisiert. Die Anfragen werden den passenden Abteilungen zugeordnet, in Google Sheets gespeichert und per automatisierter E-Mail-Benachrichtigung weitergeleitet.",
+    tags: [
+      "n8n",
+      "Google Gemini",
+      "Google Sheets",
+      "Javascript",
+      "HTML",
+      "JSON",
+    ],
+    image: projectAiContactAutomationImg,
+    placeholderText: "AI Contact Management Automation Screenshot",
+    sourceUrl: "https://github.com/HuyCodia/AI-Lead-Contact-Form-Automation",
+    year: "2026",
+    status: "Completed",
+  },
+  {
+    id: "algo-visualizer",
+    title: "Algorithmen & Graph Visualizer",
+    description:
+      "Interaktive Web-Anwendung zur Visualisierung und Simulation von Graph- und Suchalgorithmen (Dijkstra, BFS, DFS) mit animierter Schritt-für-Schritt-Ausführung im Browser.",
+    tags: ["TypeScript", "Canvas API", "Algorithms", "Tailwind CSS"],
+    image: projectAlgoImg,
+    placeholderText: "Algorithm & Graph Visualizer UI",
     year: "2026",
     status: "In Progress",
   },
