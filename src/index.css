@@ -24,3 +24,147 @@
   font-variant-numeric: slashed-zero;
   font-feature-settings: 'zero' 1, 'cv19' 1;
 }
+
+/* Edge Carousel Navigation Buttons */
+.carousel-container-outer {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.carousel-nav-btn {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 50 !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 9999px !important;
+  background-color: rgba(22, 27, 34, 0.95) !important;
+  border: 1.5px solid #293241 !important;
+  color: #F5F7FA !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 10px rgba(0, 191, 255, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.carousel-nav-btn:hover:not(:disabled) {
+  border-color: var(--primary-color, #00BFFF) !important;
+  color: var(--primary-color, #00BFFF) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5), 0 10px 30px rgba(0, 0, 0, 0.9) !important;
+}
+
+.carousel-nav-btn:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.95) !important;
+}
+
+.carousel-nav-btn:disabled {
+  opacity: 0.25 !important;
+  cursor: not-allowed !important;
+  border-color: #293241 !important;
+  box-shadow: none !important;
+}
+
+.carousel-nav-btn-prev {
+  left: 8px !important;
+}
+
+.carousel-nav-btn-next {
+  right: 8px !important;
+}
+
+@media (min-width: 768px) {
+  .carousel-nav-btn-prev {
+    left: -20px !important;
+  }
+  .carousel-nav-btn-next {
+    right: -20px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-nav-btn-prev {
+    left: -28px !important;
+  }
+  .carousel-nav-btn-next {
+    right: -28px !important;
+  }
+}
+
+/* Viewport with glow breathing room: prevents clipping the card's outer neon glow and right border */
+.carousel-viewport-glow-safe {
+  position: relative !important;
+  width: calc(100% + 32px) !important;
+  margin: -16px !important;
+  padding: 16px !important;
+  overflow: hidden !important;
+}
+
+.carousel-card-wrapper {
+  position: relative !important;
+  transition: z-index 0.2s ease !important;
+}
+
+.carousel-card-wrapper:hover {
+  z-index: 20 !important;
+}
+
+.carousel-glide-ease {
+  transition: transform 750ms cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+/* Uniform Project Card Heights & Alignment */
+.carousel-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.carousel-slide-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  height: 100% !important;
+}
+
+.project-card-uniform {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.project-card-uniform .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+}
+
+.project-card-uniform .project-title-uniform {
+  min-height: 3.5rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.project-card-uniform .project-desc-uniform {
+  flex: 1 1 auto !important;
+}
+
+.project-card-uniform .project-tags-uniform {
+  min-height: 3.25rem !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  align-content: flex-start !important;
+}
+
+.project-card-uniform .project-actions-uniform {
+  margin-top: auto !important;
+}
